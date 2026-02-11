@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF.ai - Connecting Customers to Farmers</title>
+    <style>
+        /* ==========================================
+           CLASSICAL-MODERN DESIGN SYSTEM v3.0
+           Primary: #30561D (Forest Green) + White
+           Philosophy: Timeless Elegance + Contemporary Function
+        ========================================== */
+
+        /* CSS Custom Properties */
+        :root {
+            /* Brand Colors */
+            --primary-green: #30561D;
+            --primary-green-light: #3d6e26;
+            --primary-green-dark: #234110;
+            --primary-green-extra-dark: #1a2f0c;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #e8c965;
+
+            /* Neutral Palette */
+            --white: #ffffff;
+            --cream: #fdfcf9;
+            --light-gray: #f5f5f5;
+            --gray: #e0e0e0;
+            --dark-gray: #666666;
+            --charcoal: #2c2c2c;
+
+            /* Spacing Scale (Classical Proportions) */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 40px;
+            --space-xl: 64px;
+            --space-2xl: 96px;
+
+            /* Typography Scale */
+            --font-display: 'Playfair Display', 'Georgia', serif;
+            --font-body: 'Inter', 'Segoe UI', sans-serif;
+            --font-accent: 'Poppins', sans-serif;
+
+            /* Shadow System */
+            --shadow-sm: 0 2px 8px rgba(48, 86, 29, 0.08);
+            --shadow-md: 0 4px 16px rgba(48, 86, 29, 0.12);
+            --shadow-lg: 0 8px 32px rgba(48, 86, 29, 0.16);
+            --shadow-xl: 0 16px 48px rgba(48, 86, 29, 0.24);
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-elegant: 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+        /* Tamil & Telugu Font Support */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap');
+
+        /* Global Resets & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body), 'Noto Sans Tamil', 'Noto Sans Telugu', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background: var(--cream);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Tamil & Telugu Text Rendering */
+        [lang="ta"], [lang="ta"] * {
+            font-family: 'Noto Sans Tamil', 'Tamil MN', 'Latha', sans-serif !important;
+            line-height: 1.8 !important;
+        }
+
+        [lang="te"], [lang="te"] * {
+            font-family: 'Noto Sans Telugu', 'Telugu MN', 'Gautami', sans-serif !important;
+            line-height: 1.8 !important;
+        }
+
+        /* Google Translate wrapper text */
+        body.translated-ltr,
+        body.translated-rtl {
+            font-family: var(--font-body), 'Noto Sans Tamil', 'Noto Sans Telugu', sans-serif !important;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 6px;
+            border: 3px solid var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green-dark);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* ==========================================
+           TYPOGRAPHY SYSTEM
+        ========================================== */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-green-extra-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            margin-bottom: var(--space-sm);
+            color: var(--dark-gray);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ==========================================
+           HEADER & NAVIGATION
+        ========================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all var(--transition-base);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-sm) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: transform var(--transition-base);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: var(--space-xs) 0;
+            transition: color var(--transition-base);
+        }
+
+        nav ul li a.notranslate {
+            translate: no !important;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width var(--transition-elegant);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* ==========================================
+           BUTTONS
+        ========================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: 14px 32px;
+            font-family: var(--font-accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width var(--transition-elegant), height var(--transition-elegant);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-green-dark);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           HERO SECTION
+        ========================================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) var(--space-lg);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(48, 86, 29, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--primary-green);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .hero-subtitle::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--primary-green);
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-md);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.3s backwards;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            border-radius: var(--radius-xl);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ==========================================
+           FEATURES SECTION
+        ========================================== */
+
+        .features {
+            padding: var(--space-2xl) var(--space-lg);
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--primary-green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-title {
+            margin-bottom: var(--space-md);
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--gray);
+            transition: all var(--transition-elegant);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-green-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-elegant);
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+            transition: transform var(--transition-base);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+            color: var(--primary-green-dark);
+        }
+
+        .feature-card p {
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+
+        /* ==========================================
+           HOW IT WORKS SECTION
+        ========================================== */
+
+        .how-it-works {
+            padding: var(--space-2xl) var(--space-lg);
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-gray) 100%);
+        }
+
+        .steps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 4px solid var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin: 0 auto var(--space-md);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .step:hover .step-number {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .step h3 {
+            font-size: 1.35rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .step p {
+            color: var(--dark-gray);
+        }
+
+        /* ==========================================
+           ANIMATIONS
+        ========================================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+            background: var(--primary-green-extra-dark);
+            color: var(--white);
+            padding: var(--space-xl) var(--space-lg) var(--space-md);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: var(--space-xs);
+            transition: color var(--transition-base);
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==========================================
+           MODALS & OVERLAYS
+        ========================================== */
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .auth-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 450px;
+            box-shadow: var(--shadow-xl);
+            animation: slideUp 0.4s ease;
+            border: 2px solid var(--gray);
+        }
+
+        .auth-card h2 {
+            text-align: center;
+            color: var(--primary-green-dark);
+            margin-bottom: var(--space-lg);
+            font-size: 2rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .tab {
+            flex: 1;
+            padding: var(--space-sm) var(--space-md);
+            background: var(--light-gray);
+            border: 2px solid var(--gray);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-family: var(--font-accent);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all var(--transition-base);
+            color: var(--charcoal);
+        }
+
+        .tab:hover {
+            background: var(--gray);
+        }
+
+        .tab.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--gray);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all var(--transition-base);
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(48, 86, 29, 0.1);
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            line-height: 1;
+            transition: all var(--transition-base);
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            color: var(--primary-green);
+            background: var(--light-gray);
+            transform: rotate(90deg);
+        }
+
+        /* Step-Based Registration Styles */
+        .step-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: 2px solid var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--dark-gray);
+            transition: all var(--transition-base);
+        }
+
+        .step-indicator.active .step-number {
+            background: var(--primary-green);
+            border-color: var(--primary-green);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 12px;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .step-indicator.active .step-label {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .step-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gray);
+            margin-top: 20px;
+            transition: all var(--transition-base);
+        }
+
+        .step-indicator.active ~ .step-line {
+            background: var(--primary-green);
+        }
+
+        .registration-step {
+            display: none;
+        }
+
+        .registration-step.active {
+            display: block;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--gray);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all var(--transition-base);
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(48, 86, 29, 0.1);
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-base);
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .ai-assistant:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-xl);
+            background: var(--primary-green-light);
+        }
+
+        .ai-assistant::before {
+            content: '🎤';
+            font-size: 2rem;
+        }
+
+        .ai-assistant.notranslate::before {
+            translate: no !important;
+        }
+
+        .ai-chat {
+            display: none;
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            width: 380px;
+            height: 520px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            z-index: 998;
+            flex-direction: column;
+            border: 2px solid var(--gray);
+        }
+
+        .ai-chat.active {
+            display: flex;
+        }
+
+        .ai-chat-header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: var(--space-md);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            font-weight: 600;
+        }
+
+        .ai-chat-body {
+            flex: 1;
+            padding: var(--space-md);
+            overflow-y: auto;
+            background: var(--cream);
+        }
+
+        .ai-chat-input {
+            padding: var(--space-md);
+            border-top: 2px solid var(--gray);
+            display: flex;
+            gap: var(--space-sm);
+            background: var(--white);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .ai-chat-input input {
+            flex: 1;
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--gray);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+        }
+
+        .ai-chat-input button {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition-base);
+        }
+
+        .ai-chat-input button:hover {
+            background: var(--primary-green-dark);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--white);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 3000;
+            display: none;
+            animation: slideInRight 0.5s ease;
+            border-left: 4px solid var(--primary-green);
+            max-width: 350px;
+        }
+
+        .notification.active {
+            display: block;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .close-video {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .close-video:hover {
+            background: var(--primary-green);
+            transform: rotate(90deg);
+        }
+
+        /* ==========================================
+           ANIMATIONS
+        ========================================== */
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN
+        ========================================== */
+
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-subtitle::before {
+                display: none;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: var(--space-sm);
+            }
+
+            nav ul {
+                gap: var(--space-sm);
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .ai-chat {
+                width: 90%;
+                right: 5%;
+                height: 450px;
+            }
+
+            .ai-assistant {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .auth-card {
+                padding: var(--space-lg);
+            }
+
+            .video-container {
+                width: 95%;
+            }
+        }
+
+        /* ==========================================
+           UTILITY CLASSES
+        ========================================== */
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .mb-xl { margin-bottom: var(--space-xl); }
+
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mt-xl { margin-top: var(--space-xl); }
+
+        /* ==========================================
+           GOOGLE TRANSLATE PROTECTION - ENHANCED
+        ========================================== */
+
+        /* Hide Google Translate banner and frames */
+        .goog-te-banner-frame,
+        .goog-te-menu-frame,
+        .skiptranslate,
+        .goog-te-banner,
+        .goog-te-gadget {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+        }
+
+        /* Fix body positioning when Google Translate is active */
+        body {
+            top: 0 !important;
+            position: relative !important;
+        }
+
+        body.translated-ltr,
+        body.translated-rtl {
+            top: 0 !important;
+            position: relative !important;
+        }
+
+        /* Protect ALL UI elements from translation */
+        .notranslate,
+        .notranslate *,
+        nav,
+        nav *,
+        .logo,
+        .logo *,
+        .btn,
+        .btn *,
+        .language-select,
+        .language-select *,
+        .language-select option,
+        .feature-icon,
+        .hero-subtitle,
+        .section-subtitle,
+        .step-number,
+        .close-modal,
+        .close-video,
+        .ai-assistant,
+        .ai-assistant *,
+        .ai-chat-header,
+        .tab,
+        .footer-bottom,
+        header,
+        header *,
+        footer,
+        footer *,
+        [class*="icon"],
+        [class*="emoji"],
+        .logo-icon,
+        .feature-icon {
+            translate: no !important;
+            -webkit-translate: no !important;
+        }
+
+        /* Force notranslate class protection */
+        .notranslate {
+            translate: no !important;
+            -webkit-translate: no !important;
+        }
+
+        /* Language selector - complete protection */
+        .language-select,
+        .language-selector {
+            translate: no !important;
+            -webkit-translate: no !important;
+        }
+
+        .language-select option,
+        .language-selector option {
+            translate: no !important;
+            -webkit-translate: no !important;
+        }
+
+        /* Ensure Tamil and Telugu fonts render correctly */
+        [lang="ta"], [lang="ta"] * {
+            font-family: 'Noto Sans Tamil', 'Tamil MN', 'Latha', sans-serif !important;
+        }
+
+        [lang="te"], [lang="te"] * {
+            font-family: 'Noto Sans Telugu', 'Telugu MN', 'Gautami', sans-serif !important;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Header -->
+<header>
+    <nav>
+        <a href="#" class="logo notranslate">
+            <span class="logo-icon notranslate">🌾</span>
+            <span class="notranslate">CTF.ai</span>
+        </a>
+        <ul>
+            <li><a href="#home" class="notranslate">Home</a></li>
+            <li><a href="#features" class="notranslate">Features</a></li>
+            <li><a href="#about" class="notranslate">About</a></li>
+            <li><a href="#contact" class="notranslate">Contact</a></li>
+            <li>
+                <!-- Global language selector for landing page -->
+                <select class="language-select notranslate" id="indexLanguageSelect" onchange="handleLanguageChange(this.value)">
+                    <option value="en" class="notranslate">English</option>
+                    <option value="hi" class="notranslate">हिंदी Hindi</option>
+                    <option value="ta" class="notranslate">தமிழ் Tamil</option>
+                    <option value="te" class="notranslate">తెలుగు Telugu</option>
+                </select>
+            </li>
+            <li><a href="#" class="btn btn-primary notranslate" id="get-started-btn">Get Started</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">
+                    <span>Revolutionizing Agriculture</span>
+                </p>
+                <h1><span class="text-gradient">Connecting Customers</span><br>Directly to Farmers
+                </h1>
+                <p class="hero-description">
+                    Bridge the gap between agricultural producers and consumers with our innovative platform.
+                    Empower farmers with AI-driven insights, real-time pricing, and direct market
+                    access
+                    while providing customers with fresh, authentic agricultural products.
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary notranslate" id="demo-btn">
+                        <span class="notranslate">🎥</span>
+                        <span class="notranslate">Watch Demo</span>
+                    </a>
+                    <a href="#features" class="btn btn-outline notranslate">
+                        <span class="notranslate">📖</span>
+                        <span class="notranslate">Explore Features</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&auto=format&fit=crop"
+                         alt="Farmers in field"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <p class="section-subtitle">Our Core Features</p>
+            <h2 class="section-title">Everything You Need for Modern Agriculture</h2>
+            <p class="section-description">
+                A comprehensive suite of tools designed to empower farmers and connect them with
+                customers seamlessly.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon notranslate">📍</div>
+                <h3>Connect Local Farmers</h3>
+                <p>Discover and connect with farmers within a 25 km radius. Build strong local
+                    agricultural networks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">🤝</div>
+                <h3>Direct Farmer Connect</h3>
+                <p>Eliminate middlemen. Communicate directly with farmers for better prices and
+                    authentic products.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">🤖</div>
+                <h3>AI Agent & Voice Assistant</h3>
+                <p>Smart AI-powered assistant available 24/7 to help with farming queries, market
+                    insights, and guidance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">💰</div>
+                <h3>Live Price Teller</h3>
+                <p>Real-time market price updates for crops. Stay informed and make data-driven
+                    selling decisions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">🌾</div>
+                <h3>Season Based Crop Suggestions</h3>
+                <p>AI-driven recommendations for optimal crops based on season, soil, and market
+                    demand.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">🌐</div>
+                <h3>Native Language Support</h3>
+                <p>Multi-language platform supporting regional languages for easier farmer
+                    adoption.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">📢</div>
+                <h3>Smart Advertisement Display</h3>
+                <p>Automatically promote your farm products to targeted local customers in your
+                    area.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">🔔</div>
+                <h3>Nearby Farmers and Customers Alert</h3>
+                <p>Instant notifications when farmers near you post new products or offers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">⭐</div>
+                <h3>Feedback for Farmers</h3>
+                <p>Customer rating and feedback system to build trust and improve farmer
+                    reputation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon notranslate">📝</div>
+                <h3>Customer Requirements</h3>
+                <p>Customers can post specific crop requirements, and farmers can submit custom
+                    offers.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section class="features"
+         style="padding: var(--space-2xl) var(--space-lg); background: linear-gradient(135deg, var(--cream) 0%, var(--light-gray) 100%);">
+    <div class="section-header">
+        <p class="section-subtitle">Our Mission</p>
+        <h2 class="section-title">Why CTF.ai Exists</h2>
+    </div>
+
+    <div style="max-width: 1000px; margin: 0 auto var(--space-xl); background: var(--white); padding: var(--space-xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 2px solid var(--gray);">
+        <p style="font-size: 1.15rem; line-height: 1.9; color: var(--dark-gray); text-align: center; margin-bottom: 0;">
+            CTF.ai was built with a simple yet powerful vision: to create a sustainable ecosystem
+            where farmers earn fair income, customers access genuine and healthy produce and
+            communities grow through local economic empowerment. We believe that by eliminating
+            middlemen and leveraging technology, we can revolutionize how food reaches your table.
+        </p>
+    </div>
+
+        <div class="section-header" style="margin-bottom: var(--space-lg);">
+            <h2 class="section-title" style="margin-bottom: var(--space-sm);">Who It Helps</h2>
+            <p class="section-description">Empowering everyone in the agricultural ecosystem</p>
+        </div>
+
+        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);">
+            <div style="background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--gray); box-shadow: var(--shadow-md); transition: all var(--transition-elegant);"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--primary-green)';"
+                 onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--gray)';">
+                <div class="notranslate" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: var(--space-md); box-shadow: var(--shadow-md);">
+                    👨‍🌾
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--primary-green-dark); margin-bottom: var(--space-sm);">
+                    Farmers</h3>
+                <p style="color: var(--dark-gray); line-height: 1.7; font-size: 1rem;">
+                    Get direct access to customers, better prices, and fair compensation for their
+                    hard work.
+                </p>
+            </div>
+
+            <div style="background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--gray); box-shadow: var(--shadow-md); transition: all var(--transition-elegant);"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--primary-green)';"
+                 onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--gray)';">
+                <div class="notranslate" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: var(--space-md); box-shadow: var(--shadow-md);">
+                    🏪
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--primary-green-dark); margin-bottom: var(--space-sm);">
+                    Local Vendors</h3>
+                <p style="color: var(--dark-gray); line-height: 1.7; font-size: 1rem;">
+                    Can showcase fresh products to nearby buyers and build lasting relationships.
+                </p>
+            </div>
+
+            <div style="background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); border: 2px solid var(--gray); box-shadow: var(--shadow-md); transition: all var(--transition-elegant);"
+                 onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-lg)'; this.style.borderColor='var(--primary-green)';"
+                 onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--gray)';">
+                <div class="notranslate" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: var(--space-md); box-shadow: var(--shadow-md);">
+                    🏙️
+                </div>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--primary-green-dark); margin-bottom: var(--space-sm);">
+                    Urban Consumers</h3>
+                <p style="color: var(--dark-gray); line-height: 1.7; font-size: 1rem;">
+                    Value authentic, healthy, and locally grown products with complete transparency.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- How It Works Section -->
+    <section class="how-it-works" id="about">
+        <div class="section-header">
+            <p class="section-subtitle">Simple Process</p>
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-description">Get started in three simple steps</p>
+        </div>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Create Account</h3>
+                <p>Sign up as a farmer or customer in less than 2 minutes. Provide basic details and
+                    verify your account.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Post or Browse Products</h3>
+                <p>Farmers post products with photos and prices. Customers browse fresh produce from
+                    local farmers.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Connect & Trade</h3>
+                <p>Direct communication between parties. Negotiate prices, arrange delivery, and
+                    complete transactions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="features"
+             style="padding: var(--space-2xl) var(--space-lg); background: var(--cream);">
+        <div class="section-header">
+            <p class="section-subtitle">Get in Touch</p>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">Have questions? We're here to help!</p>
+        </div>
+        <form class="auth-card" style="max-width: 600px; margin: 0 auto;"
+              onsubmit="handleContact(event)">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number or Email ID</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea placeholder="Describe your query..." required
+                          style="min-height: 150px; resize: vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About CTF.ai</h3>
+                <p>Connecting Customers to Farmers - A revolutionary platform bridging the gap
+                    between agricultural producers and consumers.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📧 support@ctf.ai</p>
+                <p>📞 +91 1234567890</p>
+                <p>📍 India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2024 CTF.ai - Connecting Customers to Farmers. All rights reserved.</p>
+        </div>
+    </footer>
+
+<!-- Welcome Modal - Choose Register or Login -->
+<div class="modal" id="authModal">
+    <div class="auth-card" style="max-width: 480px;">
+        <span class="close-modal" onclick="closeAuthModal()">×</span>
+        
+        <!-- Welcome Screen with Register/Login Options -->
+        <div id="welcomeScreen">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">🌾</div>
+                <h2 style="margin-bottom: 8px;">Welcome to CTF.ai</h2>
+                <p style="color: var(--dark-gray); font-size: 1rem;">Choose an option to get started</p>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <!-- Register Button -->
+                <button onclick="openRegisterFromWelcome()" style="display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 24px; background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)); color: white; border: none; border-radius: var(--radius-md); cursor: pointer; transition: all var(--transition-base); box-shadow: var(--shadow-md); font-family: var(--font-body);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-lg)';" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-md)';">
+                    <div style="width: 52px; height: 52px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0;">📝</div>
+                    <div style="text-align: left;">
+                        <div style="font-size: 1.15rem; font-weight: 700;">Create Account</div>
+                        <div style="font-size: 0.85rem; opacity: 0.9; font-weight: 400;">New here? Register as Farmer or Customer</div>
+                    </div>
+                </button>
+                
+                <!-- Login Button -->
+                <button onclick="showLoginForm()" style="display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 24px; background: var(--white); color: var(--primary-green-dark); border: 2px solid var(--primary-green); border-radius: var(--radius-md); cursor: pointer; transition: all var(--transition-base); box-shadow: var(--shadow-sm); font-family: var(--font-body);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-md)'; this.style.background='var(--light-gray)';" onmouseout="this.style.transform=''; this.style.boxShadow='var(--shadow-sm)'; this.style.background='var(--white)';">
+                    <div style="width: 52px; height: 52px; background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0;">🔑</div>
+                    <div style="text-align: left;">
+                        <div style="font-size: 1.15rem; font-weight: 700;">Login</div>
+                        <div style="font-size: 0.85rem; color: var(--dark-gray); font-weight: 400;">Already have an account? Sign in here</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Login Form (hidden initially) -->
+        <div id="loginScreen" style="display: none;">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 2.5rem; margin-bottom: 8px;">🔑</div>
+                <h2 style="margin-bottom: 6px; font-size: 1.6rem;">Login to Your Account</h2>
+                <p style="color: var(--dark-gray); font-size: 0.95rem;">Enter your registered mobile number & password</p>
+            </div>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>📱 Mobile Number</label>
+                    <input type="tel" id="loginPhone" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}" maxlength="10" style="font-size: 18px; letter-spacing: 2px;">
+                    <small style="color: #666; font-size: 12px;">10-digit registered mobile number</small>
+                </div>
+                <div class="form-group">
+                    <label>🔒 Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter 3-character password" required pattern="[A-Za-z0-9]{3}" maxlength="3" style="font-size: 24px; letter-spacing: 8px; text-align: center; font-weight: bold;">
+                    <small style="color: #666; font-size: 12px;">3-character password (letters or numbers)</small>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+                    🚀 Go to Dashboard
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray);">
+                <p style="color: var(--dark-gray); font-size: 0.9rem; margin-bottom: 8px;">Don't have an account?</p>
+                <button onclick="openRegisterFromLogin()" style="background: none; border: none; color: var(--primary-green); font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: underline; font-family: var(--font-body);">
+                    📝 Create Account
+                </button>
+            </div>
+            
+            <button onclick="showWelcomeScreen()" class="btn btn-outline" style="width: 100%; margin-top: 12px; padding: 12px;">
+                ← Back
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- AI Assistant -->
+<div class="ai-assistant notranslate" onclick="toggleAIChat()"></div>
+<div class="ai-chat" id="aiChat">
+    <div class="ai-chat-header">
+        Ask me anything about local farmers or products
+    </div>
+    <div class="ai-chat-body" id="chatBody">
+        <p style="color: var(--primary-green); text-align: center; margin-top: 2rem; font-weight: 600; padding: 1rem; background: var(--cream); border-radius: var(--radius-md); border: 2px solid var(--gray);">
+            Hello! How can I help you today?</p>
+    </div>
+    <div class="ai-chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Video Demo Modal -->
+<div class="video-modal" id="videoModal">
+    <div class="video-container">
+        <span class="close-video" onclick="closeVideoDemo()">×</span>
+        <video controls>
+            <source src="https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4"
+                    type="video/mp4">
+            <source src="https://cdn.pixabay.com/video/2021/08/04/88945-539771979_large.mp4"
+                    type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Step-Based Registration Modal -->
+<div class="modal" id="registrationModal">
+    <div class="auth-card" style="max-width: 500px; max-height: 90vh; overflow-y: auto;">
+        <span class="close-modal" onclick="closeRegistrationModal()">×</span>
+        <h2>Create Your Account</h2>
+        
+        <!-- Step Indicator -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px;">
+            <div class="step-indicator active" id="step1Indicator">
+                <div class="step-number">1</div>
+                <div class="step-label">Details</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-indicator" id="step2Indicator">
+                <div class="step-number">2</div>
+                <div class="step-label">Verify</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-indicator" id="step3Indicator">
+                <div class="step-number">3</div>
+                <div class="step-label">Password</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Basic Details -->
+        <div class="registration-step active" id="step1">
+            <h3 style="text-align: center; color: var(--primary-green); margin-bottom: 20px;">Basic Information</h3>
+            
+            <div class="form-group">
+                <label>👤 Full Name <span style="color: red;">*</span></label>
+                <input type="text" id="regName" placeholder="Enter your full name" required pattern="[A-Za-z\s]+" title="Only letters allowed">
+                <small style="color: #666; font-size: 12px;">Letters only</small>
+            </div>
+
+            <div class="form-group">
+                <label>📍 Village <span style="color: red;">*</span></label>
+                <input type="text" id="regVillage" placeholder="Enter your village" required>
+            </div>
+
+            <div class="form-group">
+                <label>📍 Mandal <span style="color: red;">*</span></label>
+                <input type="text" id="regMandal" placeholder="Enter your mandal" required>
+            </div>
+
+            <div class="form-group">
+                <label>📍 District <span style="color: red;">*</span></label>
+                <input type="text" id="regDistrict" placeholder="Enter your district" required>
+            </div>
+
+            <div class="form-group">
+                <label>👨‍🌾 User Type <span style="color: red;">*</span></label>
+                <select id="regUserType" required style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray); border-radius: var(--radius-md); font-size: 1rem;">
+                    <option value="">Select user type</option>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Customer">Customer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>🌐 Preferred Language <span style="color: red;">*</span></label>
+                <select id="regLanguage" required style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray); border-radius: var(--radius-md); font-size: 1rem;">
+                    <option value="">Select language</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="English">English</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="goToStep2()">
+                Continue to Mobile Verification →
+            </button>
+        </div>
+
+        <!-- Step 2: Mobile + OTP -->
+        <div class="registration-step" id="step2">
+            <h3 style="text-align: center; color: var(--primary-green); margin-bottom: 20px;">Mobile Verification</h3>
+            
+            <div class="form-group">
+                <label>📱 Mobile Number <span style="color: red;">*</span></label>
+                <input type="tel" id="regPhone" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}" maxlength="10" style="font-size: 18px; letter-spacing: 2px;">
+                <small style="color: #666; font-size: 12px;">10 digits only</small>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%;" id="sendOTPBtn" onclick="sendOTP()">
+                Send OTP
+            </button>
+
+            <div id="otpSection" style="display: none; margin-top: 20px;">
+                <div class="form-group">
+                    <label>🔐 Enter OTP <span style="color: red;">*</span></label>
+                    <input type="text" id="regOTP" placeholder="Enter 6-digit OTP" required pattern="[0-9]{6}" maxlength="6" style="font-size: 24px; letter-spacing: 8px; text-align: center; font-weight: bold;">
+                    <small style="color: #666; font-size: 12px;">Check your SMS for OTP</small>
+                </div>
+
+                <button type="button" class="btn btn-primary" style="width: 100%;" id="verifyOTPBtn" onclick="verifyOTP()">
+                    Verify OTP
+                </button>
+
+                <button type="button" style="width: 100%; margin-top: 10px; background: transparent; border: none; color: var(--primary-green); cursor: pointer; padding: 10px;" onclick="resendOTP()">
+                    Resend OTP
+                </button>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--gray);">
+                <p style="font-size: 14px; color: var(--dark-gray); margin-bottom: 10px;">For testing/demo purposes:</p>
+                <button type="button" class="btn btn-outline" style="width: 100%;" onclick="skipOTPVerification()">
+                    Skip OTP & Continue →
+                </button>
+            </div>
+
+            <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="goToStep1()">
+                ← Back
+            </button>
+        </div>
+
+        <!-- Step 3: Password -->
+        <div class="registration-step" id="step3">
+            <h3 style="text-align: center; color: var(--primary-green); margin-bottom: 20px;">Create Password</h3>
+            
+            <div class="form-group">
+                <label>🔒 Password <span style="color: red;">*</span></label>
+                <input type="password" id="regPassword" placeholder="Enter 3-character password" required pattern="[A-Za-z0-9]{3}" maxlength="3" style="font-size: 24px; letter-spacing: 8px; text-align: center; font-weight: bold;">
+                <small style="color: #666; font-size: 12px;">Password must be exactly 3 letters or numbers (e.g., A9k, 123, k7P)</small>
+            </div>
+
+            <div class="form-group">
+                <label>🔒 Confirm Password <span style="color: red;">*</span></label>
+                <input type="password" id="regConfirmPassword" placeholder="Confirm password" required pattern="[A-Za-z0-9]{3}" maxlength="3" style="font-size: 24px; letter-spacing: 8px; text-align: center; font-weight: bold;">
+            </div>
+
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="completeRegistration()">
+                Create Account
+            </button>
+
+            <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="goToStep2()">
+                ← Back
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notification"></div>
+
+<script>
+    // Navigation - Smooth scroll to sections
+    function showSection(section) {
+        const target = document.getElementById(section);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            // Ensure navbar offset is considered
+            window.scrollBy(0, -80);
+        }
+    }
+
+    // Auth Modal
+    function openAuthModal() {
+        document.getElementById('authModal').classList.add('active');
+        showWelcomeScreen();
+    }
+
+    function closeAuthModal() {
+        document.getElementById('authModal').classList.remove('active');
+        showWelcomeScreen();
+    }
+
+    function showWelcomeScreen() {
+        document.getElementById('welcomeScreen').style.display = 'block';
+        document.getElementById('loginScreen').style.display = 'none';
+    }
+
+    function showLoginForm() {
+        document.getElementById('welcomeScreen').style.display = 'none';
+        document.getElementById('loginScreen').style.display = 'block';
+    }
+
+    function openRegisterFromWelcome() {
+        closeAuthModal();
+        openRegistrationModal();
+    }
+
+    function openRegisterFromLogin() {
+        closeAuthModal();
+        openRegistrationModal();
+    }
+
+    function handleLogin(e) {
+        e.preventDefault();
+        const phone = document.getElementById('loginPhone').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+        
+        if (!phone || !/^[0-9]{10}$/.test(phone)) {
+            showNotification('Please enter a valid 10-digit mobile number');
+            return;
+        }
+        
+        if (!password || !/^[A-Za-z0-9]{3}$/.test(password)) {
+            showNotification('Password must be exactly 3 alphanumeric characters');
+            return;
+        }
+        
+        fetch('/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ phone, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Store user data in localStorage for dashboard
+                if (data.user) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                }
+                closeAuthModal();
+                showNotification('Welcome back! You have successfully logged in.');
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 1000);
+            } else {
+                showNotification(data.message || 'Login failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('An error occurred. Please try again.');
+        });
+    }
+
+    // Step-Based Registration Functions
+    let currentStep = 1;
+    let registrationData = {};
+    let otpVerified = false;
+    let otpCode = null;
+
+    function openRegistrationModal() {
+        document.getElementById('registrationModal').classList.add('active');
+        currentStep = 1;
+        registrationData = {};
+        otpVerified = false;
+        showStep(1);
+    }
+
+    function closeRegistrationModal() {
+        document.getElementById('registrationModal').classList.remove('active');
+        // Reset form
+        document.getElementById('regName').value = '';
+        document.getElementById('regVillage').value = '';
+        document.getElementById('regMandal').value = '';
+        document.getElementById('regDistrict').value = '';
+        document.getElementById('regUserType').value = '';
+        document.getElementById('regLanguage').value = '';
+        document.getElementById('regPhone').value = '';
+        document.getElementById('regOTP').value = '';
+        document.getElementById('regPassword').value = '';
+        document.getElementById('regConfirmPassword').value = '';
+        document.getElementById('otpSection').style.display = 'none';
+        currentStep = 1;
+        registrationData = {};
+        otpVerified = false;
+    }
+
+    function showStep(step) {
+        // Hide all steps
+        document.querySelectorAll('.registration-step').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.step-indicator').forEach(s => s.classList.remove('active'));
+
+        // Show current step
+        document.getElementById(`step${step}`).classList.add('active');
+        document.getElementById(`step${step}Indicator`).classList.add('active');
+
+        // Activate previous step indicators
+        for (let i = 1; i < step; i++) {
+            document.getElementById(`step${i}Indicator`).classList.add('active');
+        }
+
+        currentStep = step;
+    }
+
+    function goToStep1() {
+        showStep(1);
+    }
+
+    function goToStep2() {
+        // Validate Step 1
+        const name = document.getElementById('regName').value.trim();
+        const village = document.getElementById('regVillage').value.trim();
+        const mandal = document.getElementById('regMandal').value.trim();
+        const district = document.getElementById('regDistrict').value.trim();
+        const userType = document.getElementById('regUserType').value;
+        const language = document.getElementById('regLanguage').value;
+
+        if (!name || !/^[A-Za-z\s]+$/.test(name)) {
+            showNotification('Please enter a valid name (letters only)');
+            return;
+        }
+
+        if (!village || !mandal || !district) {
+            showNotification('Please fill all location fields');
+            return;
+        }
+
+        if (!userType) {
+            showNotification('Please select user type');
+            return;
+        }
+
+        if (!language) {
+            showNotification('Please select preferred language');
+            return;
+        }
+
+        // Save Step 1 data
+        registrationData = {
+            name,
+            village,
+            mandal,
+            district,
+            userType,
+            language,
+            location: `${village}, ${mandal}, ${district}`
+        };
+
+        showStep(2);
+    }
+
+    function sendOTP() {
+        const phone = document.getElementById('regPhone').value.trim();
+        
+        if (!phone || !/^[0-9]{10}$/.test(phone)) {
+            showNotification('Please enter a valid 10-digit mobile number');
+            return;
+        }
+
+        // Generate 6-digit OTP (for demo, in production use SMS service)
+        otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+        
+        // Store OTP in sessionStorage for verification
+        sessionStorage.setItem('otp_' + phone, otpCode);
+        sessionStorage.setItem('otp_time_' + phone, Date.now().toString());
+
+        // Show OTP section
+        document.getElementById('otpSection').style.display = 'block';
+        document.getElementById('sendOTPBtn').disabled = true;
+        document.getElementById('sendOTPBtn').textContent = 'OTP Sent ✓';
+        document.getElementById('sendOTPBtn').style.background = '#4caf50';
+
+        // For demo purposes, show OTP in console (remove in production)
+        console.log('OTP for ' + phone + ': ' + otpCode);
+        showNotification('OTP sent to ' + phone + ' (Check console for demo OTP: ' + otpCode + ')');
+    }
+
+    function verifyOTP() {
+        const phone = document.getElementById('regPhone').value.trim();
+        const enteredOTP = document.getElementById('regOTP').value.trim();
+        const storedOTP = sessionStorage.getItem('otp_' + phone);
+        const otpTime = parseInt(sessionStorage.getItem('otp_time_' + phone) || '0');
+        const now = Date.now();
+
+        // OTP expires after 5 minutes
+        if (now - otpTime > 5 * 60 * 1000) {
+            showNotification('OTP has expired. Please request a new one.');
+            return;
+        }
+
+        if (!enteredOTP || enteredOTP !== storedOTP) {
+            showNotification('Invalid OTP. Please try again.');
+            return;
+        }
+
+        otpVerified = true;
+        registrationData.phone = phone;
+        showNotification('Mobile number verified successfully!');
+        
+        // Enable proceed to next step
+        setTimeout(() => {
+            showStep(3);
+        }, 500);
+    }
+
+    function resendOTP() {
+        document.getElementById('regOTP').value = '';
+        document.getElementById('sendOTPBtn').disabled = false;
+        document.getElementById('sendOTPBtn').textContent = 'Send OTP';
+        document.getElementById('sendOTPBtn').style.background = '';
+        sendOTP();
+    }
+
+    function skipOTPVerification() {
+        const phone = document.getElementById('regPhone').value.trim();
+        
+        if (!phone || !/^[0-9]{10}$/.test(phone)) {
+            showNotification('Please enter a valid 10-digit mobile number first');
+            return;
+        }
+
+        // Mark as verified and proceed
+        otpVerified = true;
+        registrationData.phone = phone;
+        showNotification('Proceeding without OTP verification (Demo Mode)');
+        
+        setTimeout(() => {
+            showStep(3);
+        }, 500);
+    }
+
+    function completeRegistration() {
+        if (!otpVerified) {
+            showNotification('Please verify your mobile number first');
+            goToStep2();
+            return;
+        }
+
+        const password = document.getElementById('regPassword').value.trim();
+        const confirmPassword = document.getElementById('regConfirmPassword').value.trim();
+
+        if (!password || !/^[A-Za-z0-9]{3}$/.test(password)) {
+            showNotification('Password must be exactly 3 alphanumeric characters');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            showNotification('Passwords do not match');
+            return;
+        }
+
+        registrationData.password = password;
+
+        // Register user
+        fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registrationData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Store user data
+                if (data.user) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                }
+                closeRegistrationModal();
+                showNotification('Registration successful! Welcome to CTF.ai.');
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 1000);
+            } else {
+                showNotification(data.message || 'Registration failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('An error occurred. Please try again.');
+        });
+    }
+
+    function handleRegister(e) {
+        e.preventDefault();
+        // Old function kept for compatibility, but registration now uses step-based flow
+        openRegistrationModal();
+    }
+
+    // Video Demo
+    function openVideoDemo() {
+        const modal = document.getElementById('videoModal');
+        modal.classList.add('active');
+        const video = modal.querySelector('video');
+        video.play();
+    }
+
+    function closeVideoDemo() {
+        const modal = document.getElementById('videoModal');
+        modal.classList.remove('active');
+        const video = modal.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
+    }
+
+    // AI Chat
+    function toggleAIChat() {
+        const chat = document.getElementById('aiChat');
+        chat.classList.toggle('active');
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const message = input.value.trim();
+
+        if (message) {
+            const chatBody = document.getElementById('chatBody');
+
+            // User message
+            const userMsg = document.createElement('div');
+            userMsg.style.cssText = 'background: linear-gradient(135deg, #90EE90, #76c893); color: white; padding: 1rem 1.2rem; border-radius: 15px; margin-bottom: 1rem; text-align: right; margin-left: 20%; font-weight: 500; box-shadow: 0 4px 10px rgba(144, 238, 144, 0.4);';
+            userMsg.textContent = message;
+            chatBody.appendChild(userMsg);
+
+            input.value = '';
+
+            // AI response (simulated)
+            setTimeout(() => {
+                const aiMsg = document.createElement('div');
+                aiMsg.style.cssText = 'background: rgba(144, 238, 144, 0.25); color: #2d5016; padding: 1rem 1.2rem; border-radius: 15px; margin-bottom: 1rem; margin-right: 20%; border: 2px solid rgba(144, 238, 144, 0.5); font-weight: 500;';
+                aiMsg.textContent = 'Thank you for your query! Our AI system is analyzing local farmers and products in your area. How can I assist you further?';
+                chatBody.appendChild(aiMsg);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    }
+
+    // Contact Form
+    function handleContact(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {
+            name: formData.get('name') || e.target.querySelector('input[type="text"]').value,
+            contact_info: Array.from(e.target.querySelectorAll('input[type="text"]'))[1]?.value || '',
+            description: e.target.querySelector('textarea').value
+        };
+        
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                showNotification('Thank you for reaching out! Our team will contact you soon.');
+                e.target.reset();
+            } else {
+                showNotification(result.message || 'Failed to send message. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('An error occurred. Please try again.');
+        });
+    }
+
+    // Notification
+    function showNotification(message) {
+        const notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.classList.add('active');
+
+        setTimeout(() => {
+            notification.classList.remove('active');
+        }, 4000);
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Chat input enter key
+    document.getElementById('chatInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Close modals on outside click
+    window.addEventListener('click', function(e) {
+        const authModal = document.getElementById('authModal');
+        const videoModal = document.getElementById('videoModal');
+        const registrationModal = document.getElementById('registrationModal');
+
+        if (e.target === authModal) {
+            closeAuthModal();
+        }
+        if (e.target === videoModal) {
+            closeVideoDemo();
+        }
+        if (e.target === registrationModal) {
+            closeRegistrationModal();
+        }
+    });
+
+    // Initialize - ensure all sections are visible for scrolling
+    window.addEventListener('load', function() {
+        // Check if user is already logged in (session check)
+        fetch('/api/user')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // User is logged in, redirect to dashboard
+                window.location.href = '/dashboard';
+            }
+        })
+        .catch(() => {
+            // User not logged in, stay on index page
+        });
+        // All sections are visible by default, no need to hide them
+        // Smooth scroll behavior is handled by CSS and the showSection function
+    });
+
+    // Smooth header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Get Started button - Open Welcome Modal with Register/Login options
+    document.getElementById('get-started-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        openAuthModal();
+    });
+
+    // Demo button
+    document.getElementById('demo-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        openVideoDemo();
+    });
+
+    // Enhanced smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // ===== Language switching using Google Translate =====
+    function setGoogleTranslateCookie(lang) {
+        var value = '/auto/' + lang;
+        document.cookie = 'googtrans=' + value + ';path=/';
+        document.cookie = 'googtrans=' + value + ';domain=' + window.location.hostname + ';path=/';
+    }
+
+    function getGoogleTranslateLanguage() {
+        var match = document.cookie.match(/googtrans=\/auto\/([^;]+)/);
+        return match ? match[1] : 'en';
+    }
+
+    function handleLanguageChange(lang) {
+        if (!lang) lang = 'en';
+        setGoogleTranslateCookie(lang);
+        // Sync all language selects on the page
+        var selects = document.querySelectorAll('.language-select');
+        selects.forEach(function(sel) { sel.value = lang; });
+        // Reload so Google Translate applies language
+        window.location.reload();
+    }
+
+    // ===== ENHANCED: Clean up unwanted symbols and emojis inserted by Google Translate =====
+    function cleanTranslateSymbols() {
+        // Function to check if element should be skipped
+        function shouldSkip(node) {
+            if (!node) return true;
+            var element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+            if (!element) return false;
+            
+            // Skip if has notranslate class
+            if (element.classList && element.classList.contains('notranslate')) {
+                return true;
+            }
+            
+            // Skip if parent has notranslate class
+            var parent = element.parentElement;
+            var depth = 0;
+            while (parent && depth < 10) {
+                if (parent.classList && parent.classList.contains('notranslate')) {
+                    return true;
+                }
+                parent = parent.parentElement;
+                depth++;
+            }
+            
+            // Skip Google Translate elements
+            if (element.id && (element.id.includes('google_translate') || element.id.includes('goog'))) {
+                return true;
+            }
+            
+            return false;
+        }
+
+        // Function to clean text content
+        function cleanText(node) {
+            if (shouldSkip(node)) {
+                return;
+            }
+
+            if (node.nodeType === Node.TEXT_NODE) {
+                var text = node.textContent;
+                if (!text || text.trim().length === 0) return;
+                
+                var originalText = text;
+                var cleaned = text;
+                
+                // Remove unwanted symbols (➕, 🏙️, etc.)
+                cleaned = cleaned.replace(/➕/g, '');
+                cleaned = cleaned.replace(/🏙️/g, '');
+                cleaned = cleaned.replace(/🌐/g, '');
+                cleaned = cleaned.replace(/\?\?/g, '');
+                cleaned = cleaned.replace(/❓/g, '');
+                cleaned = cleaned.replace(/❔/g, '');
+                
+                // Fix incorrect patterns: ➕ ➕ தமிழ் -> தமிழ்
+                cleaned = cleaned.replace(/➕\s*➕\s*தமிழ்/gi, 'தமிழ்');
+                cleaned = cleaned.replace(/➕\s*தமிழ்/gi, 'தமிழ்');
+                cleaned = cleaned.replace(/🏙️\s*🏙️\s*తెలుగు/gi, 'తెలుగు');
+                cleaned = cleaned.replace(/🏙️\s*తెలుగు/gi, 'తెలుగు');
+                
+                // Remove globe emoji before language names
+                cleaned = cleaned.replace(/🌐\s*(தமிழ்|తెలుగు|हिंदी)/gi, '$1');
+                
+                // Remove duplicate language names
+                cleaned = cleaned.replace(/(தமிழ்|తెలుగు|हिंदी)\s+\1+/gi, '$1');
+                
+                // Remove duplicate emojis/symbols (any combination)
+                cleaned = cleaned.replace(/([➕🏙️🌐])\s*\1+/g, '');
+                
+                // Remove leading/trailing symbols before/after language names
+                cleaned = cleaned.replace(/^[➕🏙️🌐\s]+(தமிழ்|తెలుగు|हिंदी)/gi, '$1');
+                cleaned = cleaned.replace(/(தமிழ்|తెలుగు|हिंदी)[➕🏙️🌐\s]+$/gi, '$1');
+                
+                // Remove multiple consecutive spaces
+                cleaned = cleaned.replace(/\s{2,}/g, ' ');
+                
+                // Remove standalone unwanted symbols (only symbols, no text)
+                cleaned = cleaned.replace(/^[➕🏙️🌐\s]+$/g, '');
+                
+                // Trim whitespace
+                cleaned = cleaned.trim();
+                
+                // Only update if text changed and cleaned text is not empty
+                if (cleaned !== originalText && cleaned.length > 0) {
+                    node.textContent = cleaned;
+                } else if (cleaned.length === 0 && originalText.trim().length > 0) {
+                    // If we removed everything but original had content, check if it was meaningful
+                    if (originalText.match(/[a-zA-Z0-9\u0B80-\u0BFF\u0C00-\u0C7F\u0900-\u097F]/)) {
+                        // Restore original if it had actual text content
+                        node.textContent = originalText;
+                    }
+                }
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                // Skip elements with notranslate class
+                if (node.classList && node.classList.contains('notranslate')) {
+                    return;
+                }
+                
+                // Skip Google Translate elements
+                if (node.id && (node.id.includes('google_translate') || node.id.includes('goog'))) {
+                    return;
+                }
+                
+                // Clean child nodes recursively
+                var children = Array.from(node.childNodes);
+                children.forEach(function(child) {
+                    cleanText(child);
+                });
+            }
+        }
+
+        // Clean all text nodes in the document (except protected elements)
+        try {
+            var walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function(node) {
+                        if (shouldSkip(node)) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            var nodesToClean = [];
+            var node;
+            while (node = walker.nextNode()) {
+                if (node.nodeType === Node.TEXT_NODE && !shouldSkip(node)) {
+                    nodesToClean.push(node);
+                }
+            }
+
+            nodesToClean.forEach(function(node) {
+                cleanText(node);
+            });
+        } catch (e) {
+            console.warn('Error cleaning translate symbols:', e);
+        }
+    }
+
+    // ===== ENHANCED MutationObserver to monitor DOM changes and clean symbols =====
+    function setupTranslateCleaner() {
+        var cleaningInProgress = false;
+        var lastCleanTime = 0;
+        var CLEAN_THROTTLE = 200; // Minimum time between cleans (ms)
+        
+        var observer = new MutationObserver(function(mutations) {
+            if (cleaningInProgress) return;
+            
+            var now = Date.now();
+            if (now - lastCleanTime < CLEAN_THROTTLE) return;
+            
+            var shouldClean = false;
+            
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                    var target = mutation.target;
+                    
+                    // Skip if target or parent has notranslate class
+                    if (target && target.classList && target.classList.contains('notranslate')) {
+                        return;
+                    }
+                    if (target && target.parentElement && target.parentElement.classList && target.parentElement.classList.contains('notranslate')) {
+                        return;
+                    }
+                    
+                    // Skip Google Translate elements
+                    if (target && target.id && (target.id.includes('google_translate') || target.id.includes('goog'))) {
+                        return;
+                    }
+                    
+                    // Check if the change contains unwanted symbols or incorrect patterns
+                    var text = target.textContent || '';
+                    if (/➕|🏙️|\?\?|➕\s*தமிழ்|🏙️\s*తెలుగు|🌐/.test(text)) {
+                        shouldClean = true;
+                    }
+                }
+            });
+            
+            if (shouldClean) {
+                cleaningInProgress = true;
+                lastCleanTime = now;
+                setTimeout(function() {
+                    cleanTranslateSymbols();
+                    cleaningInProgress = false;
+                }, 100);
+            }
+        });
+
+        // Start observing with comprehensive filtering
+        try {
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+                attributes: false
+            });
+        } catch (e) {
+            console.warn('Error setting up translate cleaner observer:', e);
+        }
+
+        // Initial clean after page load
+        setTimeout(function() {
+            cleanTranslateSymbols();
+        }, 500);
+        
+        // Clean after Google Translate loads
+        setTimeout(function() {
+            cleanTranslateSymbols();
+        }, 2000);
+        
+        // Clean after Google Translate processes content
+        setTimeout(function() {
+            cleanTranslateSymbols();
+        }, 4000);
+        
+        // Periodic cleanup (every 3 seconds)
+        setInterval(function() {
+            if (!cleaningInProgress) {
+                cleanTranslateSymbols();
+            }
+        }, 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentLang = getGoogleTranslateLanguage();
+        var selects = document.querySelectorAll('.language-select');
+        selects.forEach(function(sel) {
+            if (currentLang) {
+                sel.value = currentLang;
+            }
+        });
+        
+        // Setup translate cleaner
+        setupTranslateCleaner();
+        
+        // Clean symbols periodically
+        setInterval(cleanTranslateSymbols, 3000);
+    });
+
+    function googleTranslateElementInit() {
+        try {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,ta,te',
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+            
+            // Clean symbols after Google Translate initializes
+            setTimeout(function() {
+                cleanTranslateSymbols();
+                setupTranslateCleaner();
+            }, 1000);
+            
+            // Additional cleanup after translation
+            setTimeout(function() {
+                cleanTranslateSymbols();
+            }, 3000);
+        } catch (e) {
+            console.warn('Error initializing Google Translate:', e);
+        }
+    }
+</script>
+
+<!-- Hidden container for Google Translate widget -->
+<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>    
